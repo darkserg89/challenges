@@ -61,6 +61,7 @@ def print_results(directors):
         fmt_director_entry = '\n{}. {:<52} {}'.format(num,director,dir_rate)
         print(fmt_director_entry)
         print(sep_line)
+        directors[director].sort(key = lambda x: x.score,reverse = True)
         for movie in directors[director]:
             if movie.year >= MIN_YEAR:
                 fmt_movie_entry = '{year}] {title:<50} {score}'.format(year=movie.year,title=movie.title,score=movie.score)
